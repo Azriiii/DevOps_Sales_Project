@@ -38,9 +38,7 @@ stage('MVN SONARQUBE'){
 
         }
 
-        agent any
 
-        stages {
 
             stage('Cloning our Git') {
 
@@ -94,5 +92,5 @@ stage('MVN SONARQUBE'){
 
             }
 
-        }
+
 }
