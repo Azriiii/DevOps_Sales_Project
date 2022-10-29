@@ -14,11 +14,7 @@ stage('MVN CLEAN'){
     }
 }
 
-stage('MVN UPDATE'){
-    steps{
-        sh 'mvn update'
-    }
-}
+
 stage('MVN COMPILE'){
     steps{
         sh 'mvn compile'
