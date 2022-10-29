@@ -1,7 +1,7 @@
 stage ('GIT'){
     steps{
         echo "getting project from git";
-        git "https://github.com/Azriiii/DevOps_Sales_Project.git"
+        git "https://github.com/Azriiii/DevOps_Sales_Project.git";
     }
 }
 stage('MVN CLEAN'){
