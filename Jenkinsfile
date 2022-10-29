@@ -32,9 +32,9 @@ pipeline {
 
     environment {
 
-        registry = "amineazri/alpine"
+        registry = "thourayalouati/docker-spring-boot"
 
-        registryCredential = 'docker_hubid'
+        registryCredential = 'dockerHub'
 
         dockerImage = ''
 
