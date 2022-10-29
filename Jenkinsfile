@@ -1,4 +1,4 @@
-
+/*
 pipeline {
 agent any
 stages {
@@ -27,4 +27,20 @@ stage('MVN SONARQUBE'){
 }
 
 }
+}*/
+pipeline {
+    agent any
+    enviroment{
+         registry = "amineazri/alpine"
+
+                  registryCredential = 'docker_hubid'
+
+                    dockerImage = ''
+    }
+                            dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                            docker.withRegistry( '', registryCredential ) {
+
+                            dockerImage.push()
+
+                        }
 }
