@@ -21,6 +21,9 @@ import io.swagger.annotations.Api;
 @RequestMapping("/categorieProduit")
 public class CategorieProduitController {
 
+
+
+	//ma
 	@Autowired
 	ICategorieProduitService categorieProduitService;
 	
