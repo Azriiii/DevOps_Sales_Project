@@ -32,9 +32,9 @@ pipeline {
 
     environment {
 
-        registry = "thourayalouati/docker-spring-boot"
+        registry = "amineazri/alpine"
 
-        registryCredential = 'dockerHub'
+        registryCredential = 'docker_hubid'
 
         dockerImage = ''
 
@@ -48,7 +48,7 @@ pipeline {
 
             steps {
 
-                git 'https://github.com/YourGithubAccount/YourGithubRepository.git'
+                git 'https://github.com/Azriiii/DevOps_Sales_Project.git'
 
             }
 
