@@ -1,6 +1,5 @@
-pipeline {
 
-    environment {
+pipeline {
 agent any
 stages {
 stage ('GIT'){
@@ -15,7 +14,6 @@ stage('MVN CLEAN'){
     }
 }
 
-
 stage('MVN COMPILE'){
     steps{
         sh 'mvn compile'
@@ -29,14 +27,4 @@ stage('MVN SONARQUBE'){
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-}}
+}
