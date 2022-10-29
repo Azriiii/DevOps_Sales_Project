@@ -42,9 +42,9 @@ pipeline {
 
     agent any
 
-   /* stages {
+    stages {
 
-        stage('Cloning our Git') {
+       /* stage('Cloning our Git') {
 
             steps {
 
@@ -52,8 +52,8 @@ pipeline {
 
             }
 
-        }
-*/
+        }*/
+
         stage('Building our image') {
 
             steps {
@@ -97,3 +97,4 @@ pipeline {
 
     }
 
+}
