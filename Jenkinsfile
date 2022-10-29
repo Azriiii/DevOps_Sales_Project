@@ -1,3 +1,7 @@
+
+pipeline {
+agent any
+stages {
 stage ('GIT'){
     steps{
         echo "getting project from git";
@@ -19,4 +23,6 @@ stage('MVN SONARQUBE'){
 	steps{
 	sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=esprit
 	}
+}
+}
 }
