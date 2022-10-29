@@ -28,5 +28,71 @@ stage('MVN SONARQUBE'){
 }
 
 }
+    environment {
 
+            registry = "amineazri/alpine"
+
+          registryCredential = 'docker_hubid'
+
+            dockerImage = ''
+
+        }
+
+        agent any
+
+        stages {
+
+            stage('Cloning our Git') {
+
+                steps {
+
+                    git 'https://github.com/Azriiii/DevOps_Sales_Project.git'
+
+                }
+
+            }
+
+            stage('Building our image') {
+
+                steps {
+
+                    script {
+
+                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+
+                    }
+
+                }
+
+            }
+
+            stage('Deploy our image') {
+
+                steps {
+
+                    script {
+
+                        docker.withRegistry( '', registryCredential ) {
+
+                            dockerImage.push()
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            stage('Cleaning up') {
+
+                steps {
+
+                    sh "docker rmi $registry:$BUILD_NUMBER"
+
+                }
+
+            }
+
+        }
 }
