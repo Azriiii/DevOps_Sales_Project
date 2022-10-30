@@ -1,5 +1,6 @@
-
 pipeline {
+
+    environment {
 agent any
 stages {
 stage ('GIT'){
@@ -93,4 +94,4 @@ stage('MVN SONARQUBE'){
             }
 
 
-}
+}}
