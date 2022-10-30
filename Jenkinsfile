@@ -85,6 +85,19 @@ pipeline {
             }
 
         }
+        stage('NEXUS'){
+                    steps{
+                        sh 'mvn deploy -DskipStaging=true '
+                    }
+
+                }
+                stage('Start container') {
+                     steps {
+                        sh  'docker-compose -v'
+                        sh 'docker-compose up -d '
+                        sh 'docker-compose ps'
+              }
+                }
 
         stage('Cleaning up') {
             steps {
