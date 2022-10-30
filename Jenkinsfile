@@ -1,7 +1,25 @@
 
 pipeline {
 agent any
+tools {
+        maven 'M2_HOME'
+    }
+    environment {
+    		DOCKERHUB_CREDENTIALS=credentials('dockerHub')
+    	}
 stages {
+stage('Compilation du Projet'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Azriiii/DevOps_Sales_Project.git']]])
+             sh 'mvn clean install'
+            }
+        }
+        stage('Package') {
+                    steps {
+                        sh 'mvn package'
+                        // bat '.\\mvnw package'
+                    }
+                }
 stage ('GIT'){
     steps{
         echo "getting project from git";
