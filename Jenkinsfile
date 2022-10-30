@@ -1,4 +1,4 @@
-/*
+
 pipeline {
 agent any
 stages {
@@ -27,8 +27,8 @@ stage('MVN SONARQUBE'){
 }
 
 }
-}*/
-pipeline {
+}
+/*pipeline {
 
     environment {
 
@@ -111,3 +111,4 @@ pipeline {
     }
 
 }
+*/
