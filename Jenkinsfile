@@ -29,7 +29,9 @@ stage('MVN SONARQUBE'){
 }
 
 }
-    environment {
+     environment {
+agent any
+stages {
 
             registry = "amineazri/alpine"
 
@@ -92,6 +94,8 @@ stage('MVN SONARQUBE'){
                 }
 
             }
+     }
 
 
+	    
 }}
