@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Produit implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -34,10 +34,13 @@ public class Produit implements Serializable {
 	private String codeProduit;
 	private String libelleProduit;
 	private float prix;
+
+
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
+
 	@ManyToOne
 	@JsonIgnore
 	private Stock stock;
@@ -47,9 +50,14 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	
+
+	public Produit(Long idProduit, String codeProduit, String libelleProduit, float prix) {
+		this.idProduit = idProduit;
+		this.codeProduit = codeProduit;
+		this.libelleProduit = libelleProduit;
+		this.prix = prix;
+	}
 
 
-	
 
 }
