@@ -20,6 +20,19 @@ stage('Compilation du Projet'){
                         // bat '.\\mvnw package'
                     }
                 }
+                 stage('NEXUS'){
+                            steps{
+                                sh 'mvn deploy -DskipStaging=true '
+                            }
+
+                        }
+                        stage('Start container') {
+                             steps {
+                                sh  'docker-compose -v'
+                                sh 'docker-compose up -d '
+                                sh 'docker-compose ps'
+                      }
+                        }
 stage ('GIT'){
     steps{
         echo "getting project from git";
