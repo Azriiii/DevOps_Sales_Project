@@ -23,10 +23,6 @@ public class CategorieProduitController {
 
 
 
-
-
-
-
 	@Autowired
 	ICategorieProduitService categorieProduitService;
 	
