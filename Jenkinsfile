@@ -28,7 +28,7 @@ stage('Compilation du Projet'){
 
 
                                         }
-                 stage('MOCKITO') {
+                /* stage('MOCKITO') {
                             steps {
                            sh 'mvn clean test -Dtest=com.esprit.examen.services.ProduitServiceMockTest'
                             }
@@ -39,7 +39,7 @@ stage('Compilation du Projet'){
                             }
                         }
 
-
+*/
                  stage('NEXUS'){
                             steps{
                                 sh 'mvn deploy -DskipStaging=true '
