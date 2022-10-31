@@ -1,8 +1,8 @@
-package com.esprit.examen.services;
+/*package com.esprit.examen.services;
 
 
-import java.util.List;
-
+import com.esprit.examen.entities.Produit;
+import com.esprit.examen.repositories.ProduitRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -11,15 +11,13 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.esprit.examen.entities.Produit;
-import com.esprit.examen.repositories.ProduitRepository;
+import java.util.List;
 
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
 public class ProduiServiceImplTest {
     @Autowired
-
     IProduitService produitService;
 
     @Autowired
@@ -47,7 +45,4 @@ public class ProduiServiceImplTest {
 
 }
 
-
-
-
-
+ */
