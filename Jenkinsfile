@@ -20,6 +20,14 @@ stage('Compilation du Projet'){
                         // bat '.\\mvnw package'
                     }
                 }
+                stage('MVN SONARQUBE') {
+                                            steps {
+                                                sh 'mvn sonar:sonar  -Dsonar.login=admin -Dsonar.password=esprit'
+
+                                            }
+
+
+                                        }
                  stage('MOCKITO') {
                             steps {
                            sh 'mvn clean test -Dtest=com.esprit.examen.services.ProduitServiceMockTest'
@@ -30,14 +38,7 @@ stage('Compilation du Projet'){
                             sh 'mvn clean test -Dtest=com.esprit.examen.services.ProduiServiceImplTest -Dmaven.test.failure.ignore=true'
                             }
                         }
-                        stage('MVN SONARQUBE') {
-                            steps {
-                                sh 'mvn sonar:sonar  -Dsonar.login=admin -Dsonar.password=rayen'
 
-                            }
-
-
-                        }
 
                  stage('NEXUS'){
                             steps{

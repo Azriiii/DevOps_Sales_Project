@@ -1,4 +1,4 @@
-/*package com.esprit.examen.services;
+package com.esprit.examen.services;
 
 
 import java.util.List;
@@ -19,6 +19,7 @@ import com.esprit.examen.repositories.ProduitRepository;
 @TestMethodOrder(OrderAnnotation.class)
 public class ProduiServiceImplTest {
     @Autowired
+
     IProduitService produitService;
 
     @Autowired
@@ -46,5 +47,5 @@ public class ProduiServiceImplTest {
 
 }
 
- */
+
 
