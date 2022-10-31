@@ -26,11 +26,11 @@ stage('Compilation du Projet'){
                            sh 'mvn clean test -Dtest=com.esprit.examen.services.ProduitServiceMockTest'
                             }
                         }
-                         stage('JUNIT') {
+                        /* stage('JUNIT') {
                             steps {
                             sh 'mvn clean test -Dtest=com.esprit.examen.services.ProduiServiceImplTest -Dmaven.test.failure.ignore=true'
                             }
-                        }
+                        }*/
 
                 stage('MVN SONARQUBE') {
                                                             steps {
