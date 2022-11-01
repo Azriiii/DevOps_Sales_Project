@@ -79,6 +79,7 @@ public class ClientServiceImplTest {
 			log.info(" client : " + client.getNom()+ " né le "+client.getDateNaissance());
 
 		}
+
 	}
 
 }
