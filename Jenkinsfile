@@ -8,6 +8,17 @@ tools {
     		DOCKERHUB_CREDENTIALS=credentials('dockerHub')
     	}
 stages {
+    stage ('GIT'){
+    steps{
+        echo "getting project from git";
+        git "https://github.com/Azriiii/DevOps_Sales_Project.git";
+    }
+}
+stage('MVN CLEAN'){
+    steps{
+        sh 'mvn clean'
+    }
+}
 stage('Compilation du Projet'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Azriiii/DevOps_Sales_Project.git']]])
@@ -53,12 +64,7 @@ stage('Compilation du Projet'){
                                 sh 'docker-compose ps'
                       }
                         }
-stage ('GIT'){
-    steps{
-        echo "getting project from git";
-        git "https://github.com/Azriiii/DevOps_Sales_Project.git";
-    }
-}
+
 /*stage('MVN CLEAN'){
     steps{
         sh 'mvn clean'
