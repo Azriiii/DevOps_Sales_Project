@@ -6,11 +6,9 @@ services:
     image: mysql:8
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD:
+
       MYSQL_DATABASE: tpachato
-      MYSQL_ROOT: root
-      MYSQL_PASSWORD:
-      MYSQL_HOST: mysqldb1
+
     ports:
       - 3307:3306
 
@@ -27,11 +25,9 @@ services:
     ports:
       - 8089:8089
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb1:3306/tpachato?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_PASSWORD:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/tpachato?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+
       MYSQL_DATABASE: tpachato
     restart: on-failure
     links:
-      - mysqldb1
+      - mysqldb
