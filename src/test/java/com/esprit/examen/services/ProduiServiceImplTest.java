@@ -32,6 +32,8 @@ public class ProduiServiceImplTest {
         Assertions.assertEquals(produitAdded.getCodeProduit(), produitAdded.getCodeProduit());
     }
 
+
+
     @Test
     @Order(2)
     public void testRetrieveAllProduits() {
