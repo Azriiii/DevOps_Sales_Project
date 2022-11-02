@@ -1,8 +1,8 @@
-/*package com.esprit.examen.services;
+package com.esprit.examen.services;
 
 
-import com.esprit.examen.entities.Produit;
-import com.esprit.examen.repositories.ProduitRepository;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -11,7 +11,8 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
+import com.esprit.examen.entities.Produit;
+import com.esprit.examen.repositories.ProduitRepository;
 
 
 @SpringBootTest
@@ -32,8 +33,6 @@ public class ProduiServiceImplTest {
         Assertions.assertEquals(produitAdded.getCodeProduit(), produitAdded.getCodeProduit());
     }
 
-
-
     @Test
     @Order(2)
     public void testRetrieveAllProduits() {
@@ -46,12 +45,3 @@ public class ProduiServiceImplTest {
 
 
 }
-
-
- */
-
-
-
-
-
-
