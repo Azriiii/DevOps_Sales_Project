@@ -33,5 +33,4 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_DATABASE: achatdb
     restart: on-failure
-    links:
-      - mysqldb
+
